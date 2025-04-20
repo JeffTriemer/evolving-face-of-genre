@@ -264,7 +264,7 @@ def year_to_decade(year_str):
 
 def prep_data(genres = ["Fantasy"], sample_size = 5, filename='data'):
     try:
-        covers_df = pd.read_pickle(f'{filename}.pkl')
+        covers_df = pd.read_pickle(f'{filename}.pkl', compression='bz2')
         print('Loaded from pickle file')
     
     except:
@@ -279,7 +279,7 @@ def prep_data(genres = ["Fantasy"], sample_size = 5, filename='data'):
     covers_df['reprocessed_img_shape'] = covers_df['reprocessed_img'].apply(lambda x: x.shape)
     
     print('view processing example-')
-    sample = covers_df.loc[0]
+    sample = covers_df.iloc[0]
     plot_image(sample['unprocessed_img'])
     plot_image(sample['reprocessed_img'].reshape(125,88,3))
     
