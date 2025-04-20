@@ -1,0 +1,14 @@
+requests
+matplotlib
+pandas
+numpy
+langdetect
+tensorflow
+joblib
+scikit-learn
+statsmodels
+scipy
+seaborn
+umap-learn
+sentence-transformers
+ipykernel
